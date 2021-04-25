@@ -45,7 +45,7 @@ public class MainStadistics extends JFrame {
 	@SuppressWarnings("static-access")
 	private void characteristics() {
 		title.setFont(new Font("Arial", Font.BOLD, 15));
-		title.setBounds(280, -5, 200, 50);
+		title.setBounds(230, -5, 400, 50);
 		tcr.setHorizontalAlignment(SwingConstants.CENTER);
 		stadistics.setAutoResizeMode(stadistics.AUTO_RESIZE_ALL_COLUMNS);
 		scroll.setBounds(10, 35, 750, 160);
