@@ -23,7 +23,6 @@ public class PanelModule extends JPanel {
 	private JScrollPane scroll;
 	private DefaultTableCellRenderer tcr;
 	private JButton btnStadistics;
-	private JButton btnStartModules;
 	
 	public PanelModule() {
 		setBorder(BorderFactory.createLineBorder(Color.black));
@@ -49,7 +48,6 @@ public class PanelModule extends JPanel {
 		tcr = new DefaultTableCellRenderer();
 		
 		btnStadistics = new JButton("Estadisticas Modulos");
-		btnStartModules = new JButton("Iniciar Atencion");
 	}
 
 	@SuppressWarnings("static-access")
@@ -66,22 +64,17 @@ public class PanelModule extends JPanel {
 		}
 		
 		btnStadistics.setBounds(550, 300, 200, 25);
-		btnStartModules.setBounds(10, 300, 150, 25);
 	}
 
 	private void addElements() {
 		add(title);
 		add(scroll);
 		add(btnStadistics);
-		add(btnStartModules);
 	}
 	
 	public void toAssing(Control control) {
 		btnStadistics.setActionCommand(Actions.STADISTICS);
 		btnStadistics.addActionListener(control);
-		
-		btnStartModules.setActionCommand(Actions.RUNMODULES);
-		btnStartModules.addActionListener(control);
 	}
 
 	public DefaultTableModel getDefaultTable() {

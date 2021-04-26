@@ -15,7 +15,7 @@ public class MainWindow extends JFrame implements Actions{
 		setResizable(true);
 		setLayout(null);
 		setSize(800, 720);
-		setLocation(200,10);
+		setLocation(10,10);
 		setTitle("ATENCION A USUARIOS NUEVA EPS");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		initialize();
@@ -104,6 +104,11 @@ public class MainWindow extends JFrame implements Actions{
 		}else if(seccion.equals(Actions.STADISTICS)) {
 			for (int i = 0; i < mainStadistics.getDefaultTable().getRowCount(); i++) {
 				mainStadistics.getDefaultTable().removeRow(i);
+				i--;
+			}
+		}else if(seccion.equals(Actions.WAITINGROOM)) {
+			for(int i = 0; i < waitingRoom.getUserWaitingRoom().getRowCount(); i++) {
+				waitingRoom.getDefaultTable().removeRow(i);
 				i--;
 			}
 		}

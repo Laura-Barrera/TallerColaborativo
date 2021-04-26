@@ -78,7 +78,9 @@ public class Management {
 	public String [][] showUsers(){
 		String[][] output = new String[usuarios.size()][3];
 		for(int i = 0; i < usuarios.size(); i++) {
-			if(!usuarios.get(i).isStatus()) {
+			if(usuarios.get(i).isStatus()) {
+				usuarios.remove(i);
+			} else if(!usuarios.get(i).isStatus()) {
 				output[i][0] = usuarios.get(i).getId();
 				output[i][1] = usuarios.get(i).getProcedure();
 				output[i][2] = usuarios.get(i).getTurn();
@@ -86,7 +88,6 @@ public class Management {
 		}
 		return output;
 	}
-
 	
 	public String turn(String procedure) {
 		for(int i = 0; i < formalities.size(); i++) {
@@ -103,7 +104,7 @@ public class Management {
 		return "Tramite incorrecto";
 	}
 	
-	public int numModules() {
+	private int numModules() {
 		int number = 0;
 		for(int i = 0; i < formalities.size(); i++) {
 			number += formalities.get(i).getModules().size();
@@ -130,7 +131,8 @@ public class Management {
 	}
 	
 	public String[][] showStadistics(){
-		return null;
+		String[][] output = new String[numModules()][4];
+		return output;
 	}
 	
 	//Metodo para que inicie el hilo de atender turnos para cada uno de los tramites

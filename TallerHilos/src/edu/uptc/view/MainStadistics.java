@@ -18,8 +18,8 @@ public class MainStadistics extends JFrame {
 	public MainStadistics() {
 		setResizable(true);
 		setLayout(null);
-		setSize(800, 300);
-		setLocation(200,10);
+		setSize(820, 300);
+		setLocation(550,300);
 		setTitle("Estadisticas por modulos");
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		initialize();
@@ -48,7 +48,7 @@ public class MainStadistics extends JFrame {
 		title.setBounds(230, -5, 400, 50);
 		tcr.setHorizontalAlignment(SwingConstants.CENTER);
 		stadistics.setAutoResizeMode(stadistics.AUTO_RESIZE_ALL_COLUMNS);
-		scroll.setBounds(10, 35, 750, 160);
+		scroll.setBounds(10, 35, 785, 160);
 		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		for (int i = 0; i < 4; i++) {
 			stadistics.getColumnModel().getColumn(i).setPreferredWidth(100);
