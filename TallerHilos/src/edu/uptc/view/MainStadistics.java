@@ -18,8 +18,8 @@ public class MainStadistics extends JFrame {
 	public MainStadistics() {
 		setResizable(true);
 		setLayout(null);
-		setSize(820, 300);
-		setLocation(550,300);
+		setSize(670, 300);
+		setLocation(700,300);
 		setTitle("Estadisticas por modulos");
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		initialize();
@@ -29,7 +29,7 @@ public class MainStadistics extends JFrame {
 	
 	private void initialize() {
 		title = new JLabel("ESTADISTICAS DE ATENCION DE MODULOS");
-		String[] titles = {"MODULO", "TRAMITE", "USUARIOS ATENDIDOS", "TIEMPO TRABAJADO (HH:MM:SS)"};
+		String[] titles = {"MODULO", "TRAMITE", "USUARIOS ATENDIDOS", "TIEMPO (HH:MM:SS:MS)"};
 		defaultTable = new DefaultTableModel() {
 			public boolean isCellEditable(int rowIndex, int colIndex) {
 				return false;
@@ -45,10 +45,10 @@ public class MainStadistics extends JFrame {
 	@SuppressWarnings("static-access")
 	private void characteristics() {
 		title.setFont(new Font("Arial", Font.BOLD, 15));
-		title.setBounds(230, -5, 400, 50);
+		title.setBounds(180, -5, 400, 50);
 		tcr.setHorizontalAlignment(SwingConstants.CENTER);
 		stadistics.setAutoResizeMode(stadistics.AUTO_RESIZE_ALL_COLUMNS);
-		scroll.setBounds(10, 35, 785, 160);
+		scroll.setBounds(10, 35, 630, 160);
 		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		for (int i = 0; i < 4; i++) {
 			stadistics.getColumnModel().getColumn(i).setPreferredWidth(100);
