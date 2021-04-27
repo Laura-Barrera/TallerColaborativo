@@ -40,7 +40,17 @@ public class Control implements ActionListener{
 		break;
 		case Actions.STADISTICS:
 			actions.activate(Actions.STADISTICS);
-			
+			new Thread(( ) -> {
+				while(true) {
+					actions.extraMethod(Actions.STADISTICS);
+					actions.show(management.showStadistics(), Actions.STADISTICS);
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e1) {
+						e1.printStackTrace();
+					}
+				}
+			}).start();
 		break;
 		default:
 			break;

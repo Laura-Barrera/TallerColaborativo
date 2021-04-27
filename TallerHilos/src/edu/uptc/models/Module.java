@@ -26,6 +26,20 @@ public class Module {
 		threadAttend.start();						//Inicia el hilo	
 	}
 	
+	//Numero de usuarios atendidos
+	public int numUsersServed() {
+		return usersServed.size();
+	}
+		
+	//Tiempo trabajado
+	public String timeWorked() {
+		int hours = runnableModule.getTimeWorked()/3600000;
+		int minutes = (runnableModule.getTimeWorked()%3600000)/60000;
+		int seconds = ((runnableModule.getTimeWorked()%3600000)%60000)/1000;
+		int milliSeconds = ((runnableModule.getTimeWorked()%3600000)%60000)%1000;
+		return hours+" : "+minutes+" : "+seconds+" : "+milliSeconds;
+	}
+	
 	public String getTitle() {
 		return title;
 	}

@@ -132,6 +132,19 @@ public class Management {
 	
 	public String[][] showStadistics(){
 		String[][] output = new String[numModules()][4];
+		int count = 0;
+		for(int i = 0; i < formalities.size(); i++) {
+			for(int j = 0; j < formalities.get(i).getModules().size(); j++) {
+				output[count][0] = formalities.get(i).getModules().get(j).getTitle();
+				output[count][1] = formalities.get(i).getModules().get(j).getProcedure();
+				output[count][2] = ""+formalities.get(i).getModules().get(j).numUsersServed();
+				output[count][3] = formalities.get(i).getModules().get(j).timeWorked();
+					count++;
+				if(count == numModules()) {
+					break;
+				}
+				}
+			}
 		return output;
 	}
 	
