@@ -13,11 +13,13 @@ public class PanelUserRegistration extends JPanel{
 	private JTextField idUser;
 	private JComboBox<String> jcbFormalities;
 	private JButton accept;
+	private String[] tramites;
 	
 	public PanelUserRegistration() {
 		setBorder(BorderFactory.createLineBorder(Color.black));
 		setLayout(null);
 		setBackground(Color.white);
+		tramites = new String[1];
 		initialize();
 		characteristics();
 		addElements();
@@ -38,9 +40,10 @@ public class PanelUserRegistration extends JPanel{
 		formalities.setFont(new Font("Arial", Font.BOLD, 15));
 		formalities.setBounds(330, 20, 100, 50);
 		idUser.setBounds(140, 30, 150, 30);
-		jcbFormalities.setModel(new DefaultComboBoxModel(Formalities.values()));
+		jcbFormalities.setModel(new DefaultComboBoxModel(this.tramites));
 		jcbFormalities.setBounds(400, 30, 200, 30);
 		accept.setBounds(650, 30, 80, 30);
+		validate();
 	}
 
 	private void addElements() {
@@ -71,4 +74,13 @@ public class PanelUserRegistration extends JPanel{
 	public void setJcbFormalities(JComboBox<String> jcbFormalities) {
 		this.jcbFormalities = jcbFormalities;
 	}
+	
+    public String[] getTramites() {
+        return tramites;
+    }
+
+    public void setTramites(String[] tramites) {
+        this.tramites = tramites;
+        getJcbFormalities().setModel( new DefaultComboBoxModel<>(tramites));
+    }
 }

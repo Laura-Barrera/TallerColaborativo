@@ -7,6 +7,7 @@ public interface Actions {
 	public static String RUNMODULES = "runModules";
 	public static String STADISTICS = "stadistics";
 	public static String WAITINGROOM = "waitingRoom";
+	public static String TRAMITE = "tramite";
 	
 	public void activate(String seccion);
 	public void deactivate(String seccion);

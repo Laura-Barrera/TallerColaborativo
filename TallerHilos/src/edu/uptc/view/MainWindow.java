@@ -132,6 +132,12 @@ public class MainWindow extends JFrame implements Actions{
 			for(int i = 0; i < salidas.length; i++) {
 				mainStadistics.getDefaultTable().addRow(salidas[i]);
 			}
+		}else if(seccion.equals(Actions.TRAMITE)) {
+			String[] tiposDeTramite= new String[salidas[0].length];
+            for (int i = 0; i < salidas[0].length; i++) {
+                tiposDeTramite[i]=salidas[0][i];
+            }
+            userRegistration.setTramites(tiposDeTramite);
 		}
 		repaint();
         validate();

@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import edu.uptc.models.Management;
+import edu.uptc.persistence.PersistenceFormalities;
 import edu.uptc.view.Actions;
 
 public class Control implements ActionListener{
@@ -12,8 +13,10 @@ public class Control implements ActionListener{
 	
 	public Control(Actions actions) {
 		this.actions = actions;
-		management=new Management();
+		management = PersistenceFormalities.descargarDatos();;
 		actions.show(management.showData(), Actions.ACTIVATE);
+		actions.show(management.tramites(), Actions.TRAMITE);
+		//PersistenceFormalities.cargarDatos(management);
 		run();
 	}
 	
@@ -31,7 +34,7 @@ public class Control implements ActionListener{
 					actions.extraMethod(Actions.WAITINGROOM);
 					actions.show(management.showUsers(), Actions.ACCEPT);
 					try {
-						Thread.sleep(1000);
+						Thread.sleep(1500);
 					} catch (InterruptedException e1) {
 						e1.printStackTrace();
 					}
@@ -45,7 +48,7 @@ public class Control implements ActionListener{
 					actions.extraMethod(Actions.STADISTICS);
 					actions.show(management.showStadistics(), Actions.STADISTICS);
 					try {
-						Thread.sleep(1000);
+						Thread.sleep(1500);
 					} catch (InterruptedException e1) {
 						e1.printStackTrace();
 					}

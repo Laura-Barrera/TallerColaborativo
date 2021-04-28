@@ -6,41 +6,11 @@ import java.util.LinkedList;
 public class Management {
 	private LinkedList<User> usuarios;
 	private ArrayList<Procedure> formalities;
-	private ArrayList<Module> modulesA, modulesC, modulesM, modulesL;
 	
 	public Management() {
 		usuarios = new LinkedList<User>();
 		formalities = new ArrayList<Procedure>();
-		modulesA = new ArrayList<Module>();
-		modulesC = new ArrayList<Module>();
-		modulesM = new ArrayList<Module>();
-		modulesL = new ArrayList<Module>();
 		
-		addModules();
-		addFormalities();
-		runShifts();
-	}
-	
-	private void addModules() {
-		modulesA.add(new Module("Modulo Uno", "Autorizaciones"));
-		modulesA.add(new Module("Modulo Dos", "Autorizaciones"));
-		
-		modulesC.add(new Module("Modulo Tres", "Asignacion_citas"));
-		modulesC.add(new Module("Modulo Cuatro", "Asignacion_citas"));
-		
-		modulesM.add(new Module("Modulo Cinco", "Entrega_medicamentos"));
-		modulesM.add(new Module("Modulo Seis", "Entrega_medicamentos"));
-		
-		modulesL.add(new Module("Modulo Siete", "Laboratorios"));
-		modulesL.add(new Module("Modulo Ocho", "Laboratorios"));
-	}
-	
-	
-	private void addFormalities() {
-		formalities.add(new Procedure("Autorizaciones", modulesA));
-		formalities.add(new Procedure("Asignacion_citas", modulesC));
-		formalities.add(new Procedure("Entrega_medicamentos", modulesM));
-		formalities.add(new Procedure("Laboratorios", modulesL));
 	}
 	
 	public String addUser(String id, String procedure, String turn) {
@@ -52,6 +22,7 @@ public class Management {
 				if(formalities.get(i).getTitle().equals(procedure)) {
 					formalities.get(i).getUsers().add(user);
 					usuarios.add(user);
+					runShifts();
 				}
 			}
 			return "Documento: "+user.getId()+"\nTurno: "+user.getTurn();
@@ -74,6 +45,16 @@ public class Management {
 			return false;
 		}
 	}
+	
+	public String[][] tramites(){
+        String[][] nombresProcedimientos = new String[1][formalities.size()];
+        for (int i = 0; i < formalities.size(); i++) {
+            nombresProcedimientos[0][i] = formalities.get(i).getTitle();
+        }
+
+
+        return nombresProcedimientos;
+    }
 
 	public String [][] showUsers(){
 		String[][] output = new String[usuarios.size()][3];
@@ -157,5 +138,13 @@ public class Management {
 				}
 			}
 		}).start();
+	}
+
+	public ArrayList<Procedure> getFormalities() {
+		return formalities;
+	}
+
+	public void setFormalities(ArrayList<Procedure> formalities) {
+		this.formalities = formalities;
 	}
 }
