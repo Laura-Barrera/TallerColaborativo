@@ -1,0 +1,56 @@
+{
+	"formalities": [
+		{
+			"title": "Autorizaciones",
+			"modules": [
+				{
+					"procedure": "Autorizaciones",
+					"title": "Modulo Uno"
+				},
+				{
+					"procedure": "Autorizaciones",
+					"title": "Modulo Dos"
+				}
+			]
+		},
+		{
+			"title": "Asignacion_citas",
+			"modules": [
+				{
+					"procedure": "Asignacion_citas",
+					"title": "Modulo Tres"
+				},
+				{
+					"procedure": "Asignacion_citas",
+					"title": "Modulo Cuatro"
+				}
+			]
+		},
+		{
+			"title": "Entrega_medicamentos",
+			"modules": [
+				{
+					"procedure": "Entrega_medicamentos",
+					"title": "Modulo Cinco"
+				},
+				{
+					"procedure": "Entrega_medicamentos",
+					"title": "Modulo Seis"
+				}
+			]
+		},
+		{
+			"title": "Laboratorios",
+			"modules": [
+				{
+					"procedure": "Laboratorios",
+					"title": "Modulo Siete"
+				},
+				{
+					"procedure": "Laboratorios",
+					"title": "Modulo Ocho"
+				}
+			]
+		}
+	]
+}
